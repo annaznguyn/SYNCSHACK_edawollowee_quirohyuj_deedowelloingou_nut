@@ -5,6 +5,7 @@
     <style>
         body {
             margin: 0;
+            background-color: #FCD9DF;
         }
 
         ul.navbar {
@@ -12,7 +13,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #1A5ECB;
+            background-color: #C21434;
         }
 
         ul.navbar li {
@@ -36,14 +37,110 @@
         ul.navbar li a:hover {
             background-color: #11408D;
         }
+
+        .search-bar input[type=text] {
+            border-radius: 30px;
+            border: 2px solid;
+            width: 450px;
+            height: 50px;
+            margin-top: 50px;
+            margin-left: 550px;
+        }
+        
+        .top-charities {
+            font-size: 25px;
+            margin-left: 40px;
+        }
+
+        .top-charities-chart {
+            display: flex;
+        }
+
+        .charity {
+            flex: 33.33%;
+            padding: 10px;
+        }
+
+        .top-charities-chart img {
+            border-radius: 20px;
+            margin-left: 80px;
+            filter: blur(3px);
+        }
+
+        .top-charities-chart img:hover {
+            filter: blur(7px);
+        }
+
+        .topchar1-name {
+            position: absolute;
+            top: 1060px;
+            left: 97px;
+            font-size: 23px;
+            width: 330px;
+            overflow-wrap: break-word;
+            color: white;
+        }
+
+        .topchar2-name {
+            position: absolute;
+            top: 1060px;
+            left: 600px;
+            font-size: 23px;
+            width: 330px;
+            overflow-wrap: break-word;
+            color: white;
+        }
+
+        .topchar3-name {
+            position: absolute;
+            top: 1060px;
+            left: 1090px;
+            font-size: 23px;
+            width: 330px;
+            overflow-wrap: break-word;
+            color: white;
+        }
     </style>
 
     <body>
         <ul class="navbar">
             <li><a href="/home">GoodHands</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/login">Log in</a></li>
         </ul>
 
-        <img src="https://wallpapercave.com/wp/wp10843280.jpg" width="100%" height="700px">
+        <img src="https://wallpapercave.com/wp/wp10843280.jpg" width="100%" height="750px">
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for charity organisations">
+        </div>
+
+        <div class="top-charities">
+            <h1>Top Charities</h1>
+        </div>
+
+        <div class="top-charities-chart">
+            <!-- first charity -->
+            <div class="charity">
+                <img src="https://www.open.edu.au/-/media/blog/2021/08-august/2-children-looking-at-camera.jpg?rev=2be977603cdb4a2e8f2d51817ee31076&hash=D5E9A2F1A9DC13143E563583615EC75A" width="350" height="300">
+                <div class="topchar1-name">
+                    <h3>Gethsemane Community</h3>
+                </div>
+            </div>
+            <!-- second charity -->
+            <div class="charity">
+                <img src="https://cdn.britannica.com/14/130114-050-3B7E515A/Participants-GayFest-Romania-Bucharest-May-23-2009.jpg" width="350" height="300">
+                <div class="topchar2-name">
+                    <h3>St Kilda Historical Society</h3>
+                </div>
+            </div>
+            <!-- third charity -->
+            <div class="charity">
+                <img src="https://images.unsplash.com/photo-1664990594674-418f27010fee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFwcHklMjBjaGlsZHJlbnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" width="350" height="300">
+                <div class="topchar3-name">
+                    <h3>The Trustee For ISG Foundation</h3>
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>
