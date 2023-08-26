@@ -8,18 +8,18 @@ Implements the filter functionality for the website
 
 import pandas as pd
 
+
+def filter_by_category(charities: pd.DataFrame, causes_selected: list, needs_selected):
+    filtered_charities = charities[charities[causes_selected].any(axis=1) & charities[needs_selected].any(axis=1)]
+    return filtered_charities
+
+
 # List of all possible categories
 CAUSES = ["Animals", "Education", "Health", "Environment", "Human rights", "Aboriginal", "Adults", "Elderly",
           "Children", "LGBTQ+", "Refugees/Migrants", "Homeless", "Chronic Illness", "Disabilities", "Unemployed",
           "Veterans"]
 # List of all possible needs
 NEEDS = ["Finance", "Food", "Clothes", "Electronics", "Blood", "Nut juice", "Slave labour"]
-
-
-def filter_by_category(charities: pd.DataFrame, causes_selected: list, needs_selected):
-    filtered_charities = charities[charities[causes_selected].any(axis=1) & charities[needs_selected].any(axis=1)]
-    return filtered_charities
-
 
 charities = pd.read_csv("FinalCharity1.csv")
 
