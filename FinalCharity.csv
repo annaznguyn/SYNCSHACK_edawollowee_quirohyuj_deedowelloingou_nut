@@ -1,0 +1,21 @@
+_id,Charity_Legal_Name,Address_Line_1,Address_Line_2,Town_City,State,Postcode,Country,Charity_Website,Animals,Education,Health,Environment,Human rights,Aboriginal,Adults,Elderly,Children,LGBTQ+,Refugees/Migrants,Homeless,Chronic Illness,Disabilities,Unemployed,Veterans
+1,St Kilda Historical Society Incorporated,2 Albion St,,Balaclava,Victoria,3183.0,Australia,https://stkildahistory.org.au/,,,,,,,1.0,1.0,,1.0,,,,,,
+2,THE TRUSTEE FOR ISG FOUNDATION,GPO Box 4190,,Sydney,NSW,2001.0,Australia,,,,,,,,,,1.0,,,,,,,
+3,Singleton Equity Housing Ltd.,"Level 3, 350 Queen Street",,Melbourne,VIC,3000.0,AUSTRALIA,https://www.housingchoices.org.au,,,,,,,,,,,,,,1.0,,
+4,THE GERALDINE MERCHANT FOUNDATION INC.,L1/123b Colin Street,,West Perth,WA,6005.0,Australia,,,1.0,,,,,,,,,,,,,,
+5,Gethsemane Community Incorporated,5 Oxford St,,Petersham,New South Wales,2049.0,Australia,www.gethsemanecommunity.org.au,,,,,,1.0,1.0,1.0,1.0,,,1.0,1.0,1.0,1.0,
+6,THE TRUSTEE FOR PETER & MARIA COPULOS FOUNDATION,Po Box 1456,,Shepparton,Victoria,3632.0,Australia,,,,,,,,,,,,,,1.0,,,
+7,ASPIRE CAIRNS COMMUNITY LIMITED,35 Rutherford Street,,Cairns North,QLD (Queensland),4870.0,Australia,https://www.facebook.com/aspirecairnscommunity,,1.0,1.0,,,1.0,,,1.0,,,1.0,,1.0,,
+8,Open Minds Australia Limited,269 Padstow Road,,Eight Mile Plains,Queensland,4113.0,Australia,www.openminds.org.au,,,1.0,,,,,,,,,,1.0,1.0,,
+9,Australian Nutrition Foundation Inc.,Se 5 70 Maclaurin Cres,,Chifley,Australian Capital Territory,2606.0,Australia,www.nutritionaustralia.org/,,,,,,1.0,1.0,1.0,1.0,,,,,,,
+10,POTTERS HOUSE CHRISTIAN FELLOWSHIP OF AUSTRALIA PENRITH,100 Station St,,Penrith,New South Wales,2750.0,Australia,pottershousepenrith.com.au,,,,,,1.0,1.0,1.0,1.0,,,1.0,1.0,1.0,1.0,1.0
+11,Ohana Education Ltd,12 Centreline Place,,Robina,Queensland,4226.0,Australia,www.arcadia.qld.edu.au,,1.0,,,,1.0,,,,,,1.0,,1.0,,
+12,National Servicemens Assoc Of Australia Act Branch Incorporated,Po Box 388,,Jamison Centre,Australian Capital Territory,2614.0,Australia,http://www.nationalservicecanberra.com,,,,,,,,1.0,,,,,,,,1.0
+13,PINK PAW PROGRAM LTD.,U 2 78 Pacific Hwy,,Swansea,New South Wales,2281.0,Australia,www.pinkpawprogram.org,1.0,,,,,1.0,1.0,,1.0,,,,,,,
+14,KIDS AND FAMILIES FOUNDATION,3 Leith Rd,,Montrose,Victoria,3765.0,Australia,,,,,,,,,,,,,,,1.0,,
+15,Mudgee Local Aboriginal Land Council,1 Industrial Ave,,Mudgee,New South Wales,2850.0,Australia,http://mudgeelalc.com,,,,,,1.0,1.0,1.0,1.0,,,1.0,1.0,1.0,1.0,
+16,The Trustee For Estate G A Maling,GPO Box 2307,,Melbourne,VIC,3001.0,AUSTRALIA,,,1.0,,,,,,,,,,,,,,
+17,Barkers Of Baldina Cottage Homes Inc,48 Commercial Street,,Burra,SA,5417.0,Australia,http://www.barkerhomes.com.au,,,,,,,,1.0,,,,,,1.0,,
+18,Annandale Public School P&C Association,Annandale Public School,,Annandale,New South Wales,2038.0,Australia,apspandc.com.au/,,1.0,,,,1.0,,,1.0,,,,,1.0,,
+19,Australasian Plant Pathology Society Incorporated,Po Box 4674,,Toowoomba East,Queensland,4350.0,Australia,https://www.appsnet.org,,1.0,,,,,1.0,,,,,,,,,
+20,Women's Community Shelters Limited,,,,,,,www.womenscommunityshelters.org.au,,,,,,,1.0,1.0,1.0,,,1.0,,,,
