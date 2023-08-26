@@ -17,6 +17,13 @@ class Sorting(Enum):
     ALPHA_ZA = 4  # Sort in reverse alphabetic order, Z to A
 
 
+def search(search_string: str, charities: pd.DataFrame, sort_by: Sorting):
+    names = charities["Charity_Legal_Name"]
+    results = charities.loc[names.str.contains(search_string, case=False, regex=False)].copy()
+    sort_results(results, sort_by)
+    return results
+
+
 def sort_results(results: pd.DataFrame, sort_by: Sorting):
     if sort_by == Sorting.RATING_DESC:
         # Sort first by rating from highest to lowest, then by most to least reviews
@@ -30,6 +37,10 @@ def sort_results(results: pd.DataFrame, sort_by: Sorting):
         a_to_z = True if sort_by == Sorting.ALPHA_AZ else False
         results.sort_values(by=["Charity_Legal_Name"], ascending=a_to_z, inplace=True)
 
+
+"""
+TESTING ONLY
+"""
 
 charities = pd.read_csv("FinalCharity.csv")
 
@@ -45,12 +56,7 @@ sd_num_reviews = 100
 random_num_reviews = np.random.normal(mean_num_reviews, sd_num_reviews, len(charities))
 charities["Num_Reviews"] = np.clip(random_num_reviews, a_min=0, a_max=1000).astype(int)
 
-search = input("Search: ")
-names = charities["Charity_Legal_Name"]
-results = charities.loc[names.str.contains(search, case=False, regex=False)].copy()
-
-sort_by = Sorting.RATING_DESC  # What to sort results by
-sort_results(results, sort_by)
+string = input("Search: ")
+results = search(string, charities, Sorting.RATING_DESC)
 
 print(results)
-
