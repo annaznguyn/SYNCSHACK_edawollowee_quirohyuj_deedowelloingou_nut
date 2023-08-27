@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <p id="number" data-number="{{ number }}"></p>
+<style>
+  body {
+  font-family: "Roboto", sans-serif;
+}
+
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 55vh;
+  width: calc((100% / 3) - 16px);
+  margin: 8px;
+  border-radius: 3px;
+  transition: all 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-actions {
+  margin: 8px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#loader {
+  display: flex;
+}
+
+.skeleton-card {
+  height: 55vh;
+  width: calc((100% / 3) - 16px);
+  margin: 8px;
+  border-radius: 3px;
+  transition: all 200ms ease-in-out;
+  position: relative;
+  background-color: #eaeaea;
+}
+
+.skeleton-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+  animation: load 1s infinite;
+}
+
+@keyframes load {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .skeleton-card::after {
+    animation: none;
+  }
+}
+
+</style>
+
+<div id="card-container">
+</div>
+<div id="loader">
+  <div class="skeleton-card"></div>
+  <div class="skeleton-card"></div>
+  <div class="skeleton-card"></div>
+</div>
+<div class="card-actions">
+  <span>Showing 
+    <span id="card-count"></span> of 
+    <span id="card-total"></span> cards      
+  </span>
+</div>
+
+
+
+<script language="JavaScript">
+const cardContainer = document.getElementById("card-container");
+const cardCountElem = document.getElementById("card-count");
+const cardTotalElem = document.getElementById("card-total");
+const loader = document.getElementById("loader");
+var numberFromPython = parseInt(document.getElementById('number').getAttribute('data-number'));
+const cardLimit = numberFromPython;
+const cardIncrease = 9;
+const pageCount = Math.ceil(cardLimit / cardIncrease);
+let currentPage = 1;
+
+
+cardTotalElem.innerHTML = cardLimit;
+
+var throttleTimer;
+const throttle = (callback, time) => {
+  if (throttleTimer) return;
+
+  throttleTimer = true;
+
+  setTimeout(() => {
+    callback();
+    throttleTimer = false;
+  }, time);
+};
+
+const getRandomColor = () => {
+  const h = Math.floor(Math.random() * 360);
+
+  return `hsl(${h}deg, 90%, 85%)`;
+};
+
+const createCard = (index) => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = index;
+  card.style.backgroundColor = getRandomColor();
+  cardContainer.appendChild(card);
+};
+
+const addCards = (pageIndex) => {
+  currentPage = pageIndex;
+
+  const startRange = (pageIndex - 1) * cardIncrease;
+  const endRange =
+    currentPage == pageCount ? cardLimit : pageIndex * cardIncrease;
+
+  cardCountElem.innerHTML = endRange;
+
+  for (let i = startRange + 1; i <= endRange; i++) {
+    createCard(i);
+  }
+};
+
+const handleInfiniteScroll = () => {
+  throttle(() => {
+    const endOfPage =
+      window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
+
+    if (endOfPage) {
+      addCards(currentPage + 1);
+    }
+
+    if (currentPage === pageCount) {
+      removeInfiniteScroll();
+    }
+  }, 1000);
+};
+
+const removeInfiniteScroll = () => {
+  loader.remove();
+  window.removeEventListener("scroll", handleInfiniteScroll);
+};
+
+window.onload = function () {
+  addCards(currentPage);
+};
+
+window.addEventListener("scroll", handleInfiniteScroll);
+</script>
+</body>
+</html>
